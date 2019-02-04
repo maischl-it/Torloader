@@ -4,9 +4,9 @@ services:
   image: "torloader"
   ports:
   - "800:9050"
-  - "900:9999"
+  - "900:80"
  torloader2:
   image: "torloader"
   ports:
   - "801:9050"
-  - "901:9999"
+  - "901:80"

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.6
+
 import time
 import subprocess
 import server
@@ -34,9 +36,11 @@ while speed < 2:
 
     print("speed "+str(speed))
 
+f=open("/var/www/html/assets/speed.json","w")
+# f=open("/home/sem/Desktop/test.json","w")
+f.write("{\"speed\":"+str(speed)+"}")
+f.close()
+
+#HTTP-Server fuer den Neustart vom Tor-Service starten
 print("StartServer")
-
-html = "<html style=\"background-color: red;\"><head><meta http-equiv=\"refresh\" content=\"30\"></head>Speed: " + \
-    str(speed)+"</html>"
-
-server.startServer(html, 9999)
+server.startServer(9999)
