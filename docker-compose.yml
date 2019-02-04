@@ -1,0 +1,12 @@
+version: '3'
+services:
+ torloader1:
+  image: "torloader"
+  ports:
+  - "800:9050"
+  - "900:9999"
+ torloader2:
+  image: "torloader"
+  ports:
+  - "801:9050"
+  - "901:9999"
