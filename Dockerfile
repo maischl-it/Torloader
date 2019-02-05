@@ -14,6 +14,7 @@ COPY torrc /etc/tor/torrc
 COPY speedtest-cli /workdir/
 COPY torloader.py /workdir
 COPY server.py /workdir
+COPY starter.py /workdir
 
 #angular-site zur Darstellung der Geschwindigkeit
 COPY web /var/www/html
@@ -27,6 +28,6 @@ WORKDIR /workdir
 CMD 	/bin/bash && \
 	export PYTHONHTTPSVERIFY=0 && \
 	nginx && \
-	python3.6 torloader.py
+	python3.6 starter.py
 
 EXPOSE 9050 80
